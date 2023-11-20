@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Add Document</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="../vendors/simple-line-icons/css/simple-line-icons.css">
+  <link rel="stylesheet" href="../vendors/flag-icon-css/css/flag-icon.min.css">
+  <link rel="stylesheet" href="../vendors/css/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <link rel="stylesheet" href=".././vendors/daterangepicker/daterangepicker.css">
+  <link rel="stylesheet" href=".././vendors/chartist/chartist.min.css">
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <!-- endinject -->
+  <!-- Layout styles -->
+  <link rel="stylesheet" href=".././css/style.css">
+  <!-- End layout styles -->
+  <link rel="shortcut icon" href=".././images/favicon.png" />
+  <!-- icons of font awsome for medical icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="navbar-brand-wrapper d-flex align-items-center">
+        <a class="navbar-brand brand-logo" href="../index.html">
+          <img src="../images/logo.png" alt="logo" class="logo-dark" />
+        </a>
+        <a class="navbar-brand brand-logo-mini" href="../index.html"><img src="../images/logo.png" alt="logo" /></a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center flex-grow-1">
+        <ul class="navbar-nav navbar-nav-right ml-auto">
+          <li class="nav-item dropdown d-none d-xl-inline-flex user-dropdown">
+            <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+              <img class="img-xs rounded-circle ml-2" src="../images/faces/healthworker.png" alt="Profile image"> <span
+                id="NavbarName" class="font-weight-normal"> Henry Klein </span></a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+              <div class="dropdown-header text-center">
+                <img class="img-md rounded-circle" src="../images/faces/healthworker.png" alt="Profile image">
+                <p id="profileName2" class="mb-1 mt-3">Allen Moreno</p>
+                <p id="navEmail" class="font-weight-light text-muted mb-0">allenmoreno@gmail.com</p>
+              </div>
+              <a class="dropdown-item" href="index.html"><i class="dropdown-item-icon icon-user text-primary"></i> My Profile</a>
+              <a class="dropdown-item" href="../pages/samples/login.html"><i
+                  class="dropdown-item-icon icon-power text-primary"></i>Sign Out</a>
+            </div>
+          </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+          data-toggle="offcanvas">
+          <span class="icon-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item nav-profile">
+            <a href="#" class="nav-link">
+              <div class="profile-image">
+                <img class="img-xs rounded-circle" src="../images/faces/healthworker.png" alt="profile image">
+              </div>
+              <div class="text-wrapper">
+                <p id="profileName" class="profile-name">Allen Moreno</p>
+                <p class="designation">Doctor</p>
+              </div>
+            </a>
+          </li>
+          <li class="nav-item nav-category">
+            <span class="nav-link">Dashboard</span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">
+              <span class="menu-title">My Informations</span>
+              <i class="icon-screen-desktop menu-icon"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="editInformation.html">
+              <span class="menu-title">Edit Contact Info</span>
+              <i class="fa fa-user-md menu-icon"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="consultRecord.html">
+              <span class="menu-title">Consult A Patient</span>
+              <i class="fa fa-user menu-icon"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="page-header">
+            <h3 class="page-title"> Add Document </h3>
+            <div class="form-group">
+              <label>Document Type</label>
+              <select id="docType" class="js-example-basic-single" style="width:100%">
+                <option disabled selected value> -- select an option -- </option>
+                <option value='Prescription / Ordonnance médicale'>Prescription / Ordonnance médicale</option>
+                <option value='Death certificate / Certificat de constatation de décès'>Death certificate /
+                  Certificat de constatation de
+                  décès</option>
+                <option value='Premarital certificate / Certificat prénuptial'>Premarital certificate /
+                  Certificat prénuptial</option>
+                <option value='Vaccination certificate / Certificat de vaccination'>Vaccination certificate /
+                  Certificat de vaccination</option>
+                <option
+                  value='Medical certificates for social security / Certificats médicaux destinés à la sécurité sociale'>
+                  Medical certificates for social security / Certificats médicaux destinés à la sécurité sociale
+                </option>
+                <option value="Certificates of protection of an incapable adult / Certificats de protection d'
+                  un incapable majeur">Certificates of protection of an incapable adult / Certificats de
+                  protection d'un incapable majeur</option>
+                <option value="Certificate of internment / Certificat d' internement">Certificate of internment
+                  / Certificat d'internement</option>
+                <option value='Certificate of good health / Certificat de bonne santé'>Certificate of good
+                  health / Certificat de bonne santé</option>
+                <option value="Certificate of fitness / Certificat d' aptitude physique">Certificate of fitness
+                  / Certificat d'aptitude physique</option>
+                <option value='Certificate of pneumo-phthisiology / Certificat de pneumo-phtisiologie'>
+                  Certificate of pneumo-phthisiology
+                  / Certificat de pneumo-phtisiologie</option>
+                <option value="Certificate of work stoppage / Certificat d' arrêt de travail">Certificate of
+                  work stoppage / Certificat d'arrêt de travail</option>
+                <option value="Certificate of age estimate / Certificat d' estimation d'âge">Certificate of age
+                  estimate / Certificat d'estimation d'âge</option>
+                <option value='Certificate of pregnancy / Certificat  de grossesse'>Certificate of pregnancy /
+                  Certificat de grossesse</option>
+              </select>
+            </div>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="Doctors.html">Document</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Add Document</li>
+              </ol>
+            </nav>
+          </div>
+          <div class="card" id="documentCard">
+            <div class="card-body">
+              <h4 class="card-title">Add Document</h4>
+              <div class="row ">
+                <div class="col-md-6 grid-margin" ;>
+                  <form class="forms-sample">
+                    <div class="form-group">
+                      <label for="DOB">documentDate</label>
+                      <input type="date" class="form-control" id="docDate" placeholder="DOB" required>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleTextarea1">Description</label>
+                      <textarea class="form-control" placeholder="Document Description and informations..."
+                        id="docDecsription" rows="20"></textarea>
+                    </div>
+                    <div class="form-group">
+
+                    </div>
+
+                </div>
+                </form>
+                <div class="col-md-6 grid-margin" ;>
+                  <div class="b3">
+                    <div class="container">
+                      <!-- <button onclick="defaultBtnActive()" id="custom-btn"
+                        class="file-upload-browse btn btn-primary" style="margin-bottom: 20px;">Upload Image</button> -->
+                      <input type="file" id="myFile" name="filename" onchange={App2.captureFile()}
+                        class="file-upload-default" hidden>
+                      <button class="file-upload-browse btn btn-primary" onclick="App2.onSubmit()" type="button"
+                        hidden>Upload</button>
+                      <div id="previewlink"></div>
+
+                      <div class="wrapper2">
+                        <div class="image">
+                          <img id="preview" src="../images/cloud-computing.png"
+                            style="height:50% ; width: 50%; margin-left:25%" onclick="imageOnClick()">
+                        </div>
+                        <div id="cancel-btn">
+                          <i class="fas fa-times"></i>
+                        </div>
+                        <div class="file-name">
+                          File name here
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <center><button onclick="onSubmit(event)" type="submit" class="btn btn-primary mr-2">Submit</button></center>
+
+            </div>
+            <!-- content-wrapper ends -->
+            <!-- partial:partials/_footer.html -->
+            <footer class="footer">
+
+            </footer>
+            <!-- partial -->
+          </div>
+          <div class="card" id="ordonnanceCard" hidden>
+            <div class="card-body">
+              <h4 class="card-title">Create prescription</h4>
+              <div class="row ">
+                <div class="col-md-8 grid-margin" ;>
+                  <form class="forms-sample">
+                    <div class="form-group">
+                      <label for="DOB">Prescription Date</label>
+                      <input type="date" class="form-control" id="ordoDate" onchange="myFunction()" required>
+                    </div>
+                    <div class="row input_fields_wrap">
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="DOB">Drug Name</label>
+                          <input type="text" class="form-control" id="drugName-1" placeholder="Drug Name"
+                            onkeyup="updateMedicene(1)" required>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label for="DOB">Number of uses</label>
+                          <input type="text" min="0" class="form-control" id="usesDay-1" placeholder="Number of uses"
+                            onChange="updateMedicene(1)" required>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group">
+                          <label for="DOB">Condition (optional)</label>
+                          <input type="text" min="0" class="form-control" id="condition-1" placeholder="condition"
+                            onChange="updateMedicene(1)" required>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group">
+                          <label for="DOB">Days number</label>
+                          <input type="number" min="0" class="form-control" id="daysNumber-1" placeholder="Days Number"
+                            onChange="updateMedicene(1)" required>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-group ">
+                          <label for="DOB">Add Medicine</label>
+                          <button type="button" onclick="addMedicine(event)" class="btn btn-success add_field_button"><i
+                              class="icon-plus"></i></button>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="form-group">
+                      <label for="exampleTextarea1">Description</label>
+                      <textarea class="form-control" placeholder="Prescription Description and informations..."
+                        id="ordoDecsription" rows="15"></textarea>
+                    </div>
+                    <div class="form-group">
+
+                    </div>
+
+                </div>
+                </form>
+                <div class="col-md-4 grid-margin">
+                  <div  >
+                    <div    >
+                    <div id="print" class="container">
+                      <div id="Ordonnance" class="flex-column-ordo OrdonnanceCont-ordo">
+                        <div class="flex-row-ordo underline-ordo" style="padding-bottom: 1.5mm;">
+                          <div class="flex-column-ordo" style="justify-content: center;">
+                            <div id="docName">Dr.Name Last</div>
+                            <div id="speciality" class="underline-ordo">Generalist</div>
+                            <div id="phoneNum">tel:0556677889</div>
+                            <div id="docEmail">doc@mail.com</div>
+
+                          </div>
+                          <div></div>
+                          <div class="flex-img-div-ordo"><img class="logo-place-ordo" src="../images/logo.png" title="logo">
+                            <h3 class="logo-title-lpace-ordo">DecentraMed</h3>
+                          </div>
+
+
+                        </div>
+                        <div class="flex-row-ordo" style="margin-top: 3mm;">
+                          <div id="nom">Nom:</div>
+                          <div id="prenom">Prenom:</div>
+                          <div id="age">Age: </div>
+                        </div>
+                        <h2 style="margin-bottom: 1cm;">ORDONNANCE</h2>
+                        <div class="flex-column-ordo medicineList">
+                          <div class="medicine-ordo" id="med-1">
+                            <div class="flex-row-ordo">
+                              <div class="flex-column-med-ordo">
+                                <div class="medicinName"></div>
+                                <div class="medicineTraitment"></div>
+                                <div class="medicineCondition"></div>
+                              </div>
+                              <div class="medicineBoites"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class='bot-ordo'>
+                          <span class="flex-row-ordo addressUnder-ordo">
+                            <div id="inputAddress">Rue, Cite, Eloued </div>
+                            <div id="inputDate">, le: </div>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+              <center><button onclick="onSubmitOrdo(event)" type="submit" class="btn btn-primary mr-2">Submit</button></center>
+
+            </div>
+            <!-- content-wrapper ends -->
+            <!-- partial:partials/_footer.html -->
+            <footer class="footer-ordo">
+
+            </footer>
+            <!-- partial -->
+          </div>
+          <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+      </div>
+      <!-- container-scroller -->
+      <!-- plugins:js -->
+      <script src="../vendors/js/vendor.bundle.base.js"></script>
+      <script src="index.js"></script>
+
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+      <!-- endinject -->
+      <!-- Plugin js for this page -->
+      <script src="../vendors/moment/moment.min.js"></script>
+      <script src="../vendors/daterangepicker/daterangepicker.js"></script>
+      <!-- End plugin js for this page -->
+      <!-- inject:js -->
+      <script src="../js/off-canvas.js"></script>
+      <script src="../js/misc.js"></script>
+      <!-- endinject -->
+      <!-- Custom js for this page -->
+
+      <!-- plugins:js -->
+      <script src="../js/profileName.js"></script>
+      <!-- endinject -->
+      <!-- Plugin js for this page -->
+      <script src="../js/web3.min.js"></script>
+      <script src="../vendors/select2/select2.min.js"></script>
+      <script src="../vendors/typeahead.js/typeahead.bundle.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/ipfs/0.58.7-rc.1/index.min.js"
+        integrity="sha512-IuczYwHkTdEeLx6wHI3nUndaHHoXyHheIcwR6CK5gul/kViW+3jxc+BY8UqbhTQP3nQFY4AGPgemWRTFiFgIvQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <!-- End plugin js for this page -->
+      <!-- inject:js -->
+      <!-- endinject -->
+      <!-- Custom js for this page -->
+      <script src="../js/typeahead.js"></script>
+      <script src="../js/select2.js"></script>
+      <script src="../js/addDocument.js"></script>
+      <script src="../js/app.js"></script>
+      <script src="../js/fillOrdo.js"></script>
+
+      <script src="../js/profileName.js"></script>
+      <!-- End custom js for this page -->
+      <!-- Plugin css for this page -->
+      <link rel="stylesheet" href="../vendors/select2/select2.min.css">
+      <link rel="stylesheet" href="../vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
+      <!-- End plugin css for this page -->
+      <!-- inject:css -->
+      <!-- endinject -->
+      <!-- Layout styles -->
+      <link rel="stylesheet" href="../css/style.css" />
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="test.css">
+</body>
+
+<script>
+  
+  const wrapper = document.querySelector(".wrapper2");
+  const fileName = document.querySelector(".file-name");
+  const defaultBtn = document.querySelector("#myFile");
+  const customBtn = document.querySelector("#custom-btn");
+  const cancelBtn = document.querySelector("#cancel-btn i");
+  const img = document.getElementById("preview");
+  let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
+
+  /*Document type hide*/
+  $(document).ready(function () {
+    $('#docType').on('change', function () {
+      doctype = $('#docType');
+      ordo = $('#ordonnanceCard');
+      documentCard = $('#documentCard');
+
+      console.log(docType.value);
+
+      if (docType.value == 'Prescription / Ordonnance médicale') {
+        $("#documentCard").attr("hidden",true);
+        $("#ordonnanceCard").attr("hidden",false);
+
+      }else{
+        $("#documentCard").attr("hidden",false);
+        $("#ordonnanceCard").attr("hidden",true);
+      }
+    });
+  });
+
+  function defaultBtnActive() {
+    defaultBtn.click();
+  }
+  function imageOnClick() {
+    if (img.src.endsWith("/images/cloud-computing.png")) {
+      defaultBtn.click();
+    }
+  }
+  defaultBtn.addEventListener("change", function () {
+    const file = this.files[0];
+    console.log(file)
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function () {
+        const result = reader.result;
+        img.src = result;
+        img.style = "";
+        wrapper.classList.add("active");
+      }
+
+      cancelBtn.addEventListener("click", function () {
+        img.src = "../images/cloud-computing.png";
+        img.style = "height:50% ; width: 50%; margin-left:25%";
+        wrapper.classList.remove("active");
+      })
+      reader.readAsDataURL(file);
+    }
+
+    if (this.value) {
+      let valueStore = this.value.match(regExp);
+      fileName.textContent = valueStore;
+    }
+
+  });
+</script>
+
+
+<script>
+
+  const max_fields = 7; //maximum input boxes allowed
+  var x = 1; //initlal text box count
+  /*   add medicen function */
+  function addMedicine(e) {
+    var wrapper = $(".input_fields_wrap"); //Fields wrapper
+    var add_button = $(".add_field_button"); //Add button ID
+    var wrapper2 = $(".medicineList"); //Fields wrapper of orddonance
+
+    e.preventDefault();
+    if (x < max_fields) { //max input box allowed
+      x++; //text box increment
+      $(wrapper).append('<div id="div1-' + x + '" class="col-md-3"><div class="form-group"><label for="DOB">Drug Name</label><input type="text" class="form-control" id="drugName-' + x + '" placeholder="Drug Name" onKeyup="updateMedicene(' + x + ')" required></div> </div><div id="div2-' + x + '" class="col-md-3"><div class="form-group"><label for="DOB">Number of uses</label><input type="text" min="0" class="form-control" id="usesDay-' + x + '" placeholder="Number of uses a day" onKeyup="updateMedicene(' + x + ')" required></div></div><div id="div5-' + x + '" class="col-md-2"><div class="form-group"><label for="DOB">Condition (optional)</label><input type="text" min="0" class="form-control" id="condition-' + x + '" placeholder="condition" onKeyup="updateMedicene(' + x + ')" required></div></div><div id="div3-' + x + '" class="col-md-2"><div class="form-group"><label for="DOB">Days number</label><input type="number" min="0" class="form-control" id="daysNumber-' + x + '" placeholder="Days Number" onChange="updateMedicene(' + x + ')"required></div></div><div id="div4-' + x + '"class="col-md-2"> <div class="form-group "> <label for="DOB">&nbsp;&nbsp;&nbsp;&nbsp;Remove</label> <button id ="button-' + x + '" type="button" onclick="rmvMedicine(' + x + ')" class="btn btn-danger add_field_button"><i class="icon-minus" ></i></button> </div> </div>'); //add input box
+      $(wrapper2).append('<div class="medicine-ordo uperline-ordo" id="med-' + x + '"> <div class="flex-row-ordo"> <div class="flex-column-med-ordo"> <div class="medicinName"></div> <div class="medicineTraitment"></div> <div class="medicineCondition"></div> </div> <div class="medicineBoites"></div> </div> </div>');
+
+    }
+  }
+
+  function updateMedicene(drugId) {
+    console.log(drugId)
+    /*     tempel = document.getElementById('med-' + x);
+     */
+    var tempel = $('#med-' + drugId);
+    drugName = document.getElementById('drugName-' + drugId);
+    usesDay = document.getElementById('usesDay-' + drugId);
+    daysNumber = document.getElementById('daysNumber-' + drugId);
+    condition = document.getElementById('condition-' + drugId);
+    console.log(tempel)
+    tempel.find('.medicinName').html(drugName.value);
+    tempel.find('.medicineTraitment').html(usesDay.value);
+    tempel.find('.medicineBoites').html(daysNumber.value);
+    tempel.find('.medicineCondition').html(condition.value);
+  }
+
+  /* remove medicen function*/
+  function rmvMedicine(id) {
+    var tempel = $('#med-' + id);
+    var wrapper = $(".input_fields_wrap"); //Fields wrapper
+    var add_button = $(".add_field_button"); //Add button ID
+    /*     x--;
+     */
+    console.log(id);
+    for (let i = 1; i <= 5; i++) {
+      document.getElementById('div' + i + '-' + id).remove();
+    }
+    tempel.remove();
+    x--;
+  }
+
+  /* html realtime typing on the ordonnance */
+
+
+  ordoDate = document.getElementById('ordoDate');
+  inputDate = document.getElementById('inputDate');
+
+  function myFunction() {
+    inputDate.innerHTML = ', le: ' + ordoDate.value;
+
+  }
+
+
+</script>
+
+</html>
